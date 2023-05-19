@@ -40,7 +40,9 @@ const App = () => {
     <Fragment>
       <h1>TODO LIST</h1>
       <TodoForm dispatch={dispatch} />
-      <TodoLists data={todoList} dispatch={dispatch} />
+      {todoList.length !== 0 && (
+        <TodoLists data={todoList} dispatch={dispatch} />
+      )}
     </Fragment>
   );
 };
