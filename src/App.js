@@ -14,6 +14,13 @@ const reducer = (state, actions) => {
     return [...state, newTask(actions.payload.task)];
   } else if (actions.type === ACTIONS.DELETE_TASK) {
     return state.filter((task) => task.id !== actions.payload.id);
+  } else if (actions.type === ACTIONS.CHANGE_STATUS_TASK) {
+    return state.map((task) => {
+      if (task.id === actions.payload.id) {
+        return { ...task, status: !task.status };
+      }
+      return task;
+    });
   }
   return state;
 };
@@ -22,7 +29,7 @@ const newTask = (task) => {
   return {
     id: Date.now(),
     name: task,
-    completed: false,
+    status: false,
   };
 };
 

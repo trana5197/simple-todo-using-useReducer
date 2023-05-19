@@ -11,6 +11,11 @@ li {
   font-size: 1.8rem;
 
   align-self: center;
+
+  padding: 0.4rem 1.2rem;
+  border-radius: 3px;
+
+  margin-top: 0.4rem;
 }
 
 .button {
@@ -22,7 +27,27 @@ li {
   align-items: center;
 }
 
+.btn-status {
+  margin-top: -0.9rem;
+  background: none;
+  border: none;
+  font-size: 3rem;
+
+  display: flex;
+  align-items: center;
+}
+
 .button:last-child {
   margin-right: 0;
   margin-left: auto;
+
+  margin-top: -0.5rem;
+}
+
+.not-completed {
+  background-color: rgba(234, 17, 17, 0.884);
+}
+
+.completed {
+  background-color: rgba(6, 142, 6, 0.933);
 }
