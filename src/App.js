@@ -1,10 +1,14 @@
-import "./App.css";
+import { Fragment } from "react";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   return (
-    <div>
-      <h1>TODO LIST</h1>{" "}
-    </div>
+    <Fragment>
+      <h1>TODO LIST</h1>
+      <TodoForm />
+      <TodoList />
+    </Fragment>
   );
 };
 
