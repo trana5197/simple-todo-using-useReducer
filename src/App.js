@@ -1,7 +1,7 @@
 import { Fragment, useReducer } from "react";
 
 import TodoForm from "./components/TodoForm";
-import TodoList from "./components/TodoList";
+import TodoLists from "./components/TodoLists";
 
 export const ACTIONS = {
   ADD_TASK: "add-task",
@@ -33,7 +33,7 @@ const App = () => {
     <Fragment>
       <h1>TODO LIST</h1>
       <TodoForm dispatch={dispatch} />
-      <TodoList data={todoList} dispatch={dispatch} />
+      <TodoLists data={todoList} dispatch={dispatch} />
     </Fragment>
   );
 };
