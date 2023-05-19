@@ -1,10 +1,13 @@
 import { useState } from "react";
 
+import { ACTIONS } from "../App";
 import Card from "../UI/Card";
 
 import classes from "./TodoForm.module.css";
 
-const TodoForm = () => {
+const TodoForm = (props) => {
+  const { dispatch } = props;
+
   const [enteredTask, setEnteredTask] = useState("");
 
   const taskChangeHandler = (e) => {
@@ -14,13 +17,9 @@ const TodoForm = () => {
   const taskSubmitHandler = (e) => {
     e.preventDefault();
 
-    const task = {
-      id: Date.now(),
-      name: enteredTask,
-      completed: false,
-    };
+    const task = enteredTask;
 
-    console.log(task);
+    dispatch({ type: ACTIONS.ADD_TASK, payload: { task: task } });
 
     setEnteredTask("");
   };

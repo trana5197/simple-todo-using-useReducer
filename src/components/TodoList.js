@@ -1,15 +1,33 @@
+import { ACTIONS } from "../App";
 import Card from "../UI/Card";
 
 import classes from "./TodoList.module.css";
 
-const TodoList = () => {
+const TodoList = (props) => {
+  const { data } = props;
+
+  const deleteTaskHandler = (taskId) => {
+    props.dispatch({ type: ACTIONS.DELETE_TASK, payload: { id: taskId } });
+  };
+
   return (
     <Card>
       <ul className={classes["todo-lists"]}>
-        <button className={classes.button}>&#9634;</button>
-        {/* <button className={classes.button}>&#9635;</button> */}
-        <li>List</li>
-        <button className={classes.button}>&#10060;</button>
+        {data.map((task) => {
+          return (
+            <div className={classes.list} key={task.id}>
+              {/* <button className={classes.button}>&#9635;</button> */}
+              <button className={classes.button}>&#9634;</button>
+              <li>{task.name}</li>
+              <button
+                className={classes.button}
+                onClick={() => deleteTaskHandler(task.id)}
+              >
+                &#10060;
+              </button>
+            </div>
+          );
+        })}
       </ul>
     </Card>
   );
