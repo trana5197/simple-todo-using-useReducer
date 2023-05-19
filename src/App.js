@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <Fragment>
-      <h1>TODO LIST</h1>
+      <h1 className="heading">TODO LIST</h1>
       <TodoForm dispatch={dispatch} />
       {todoList.length !== 0 && (
         <TodoLists data={todoList} dispatch={dispatch} />

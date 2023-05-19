@@ -10,7 +10,9 @@ body {
   font-family: "Roboto";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.heading {
+  font-size: 4rem;
+  text-align: center;
+  margin: 5rem;
+  letter-spacing: -1px;
 }
