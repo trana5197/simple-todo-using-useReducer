@@ -25,6 +25,8 @@ li {
 
   display: flex;
   align-items: center;
+
+  cursor: pointer;
 }
 
 .btn-status {
@@ -35,6 +37,8 @@ li {
 
   display: flex;
   align-items: center;
+
+  cursor: pointer;
 }
 
 .button:last-child {
